@@ -48,6 +48,16 @@ stages:
         - task: TerraformTask@5
           inputs:
             provider: 'azurerm'
+            command: 'init'
+            workingDirectory: '$(System.DefaultWorkingDirectory)/'
+            backendServiceArm: 'ispyarkokyanaamdo-manoj'
+            backendAzureRmResourceGroupName: 'rgs'
+            backendAzureRmStorageAccountName: 'stg'
+            backendAzureRmContainerName: 'ctr'
+            backendAzureRmKey: 'dev.terraform.tfstate'
+        - task: TerraformTask@5
+          inputs:
+            provider: 'azurerm'
             command: 'apply'
             workingDirectory: '$(System.DefaultWorkingDirectory)/'
             environmentServiceNameAzureRM: 'ispyarkokyanaamdo-manoj'
