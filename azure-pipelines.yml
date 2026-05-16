@@ -19,3 +19,18 @@ stages:
             backendAzureRmStorageAccountName: 'stg'
             backendAzureRmContainerName: 'ctr'
             backendAzureRmKey: 'dev.tfstate'
+
+  - stage: Terraformplan
+    jobs:
+      - job: plan
+        steps:
+        - task: TerraformTask@5
+          inputs:
+            provider: 'azurerm'
+            command: 'init'
+            workingDirectory: '$(System.DefaultWorkingDirectory)/'
+            backendServiceArm: 'ispyarkokyanaamdo-manoj'
+            backendAzureRmResourceGroupName: 'rgs'
+            backendAzureRmStorageAccountName: 'stg'
+            backendAzureRmContainerName: 'ctr'
+            backendAzureRmKey: 'dev.tfstate'
