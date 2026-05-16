@@ -40,4 +40,15 @@ stages:
             command: 'plan'
             workingDirectory: '$(System.DefaultWorkingDirectory)/'
             environmentServiceNameAzureRM: 'ispyarkokyanaamdo-manoj'
-      
+
+  - stage: Apply
+    jobs:
+      - job: Apply
+        steps:
+        - task: TerraformTask@5
+          inputs:
+            provider: 'azurerm'
+            command: 'apply'
+            workingDirectory: '$(System.DefaultWorkingDirectory)/'
+            commandOptions: '-auto-approve'
+            environmentServiceNameAzureRM: 'ispyarkokyanaamdo-manoj'
