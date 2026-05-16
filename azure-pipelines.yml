@@ -50,5 +50,4 @@ stages:
             provider: 'azurerm'
             command: 'apply'
             workingDirectory: '$(System.DefaultWorkingDirectory)/'
-            commandOptions: '-auto-approve'
             environmentServiceNameAzureRM: 'ispyarkokyanaamdo-manoj'
