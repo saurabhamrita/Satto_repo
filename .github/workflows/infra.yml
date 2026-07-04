@@ -23,8 +23,8 @@ jobs:
     name : terraform plan
     runs-on : ubuntu-latest
     steps : 
-      - name : checkout
-        uses : ctions/checkout@v7.0.0
+      - name: Checkout
+        uses: actions/checkout@v4
 
       - name : HashiCorp - Setup Terraform
         uses : hashicorp/setup-terraform@v2.0.3
